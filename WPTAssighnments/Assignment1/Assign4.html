@@ -185,6 +185,8 @@
           } else {
             document.querySelector("#changes").innerHTML = "Already Modified";
           }
+          
+           showAllItems();
         }); // Modify Event Ended......
 
         //  //Remove Event...
@@ -200,6 +202,8 @@
           else
             document.querySelector("#changes").innerHTML = "Details not Found";
           document.querySelector("#modify").disabled = true;
+          
+           showAllItems();
         }); //Remove Event Ended....
 
         //  //View All Event
