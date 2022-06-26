@@ -1,0 +1,47 @@
+<html>
+<head>
+<script>
+  
+  window.addEventListener("DOMContentLoaded",()=>{
+  
+  const select = document.querySelector("#select");
+  select.addEventListener("click",()=>{
+   if(document.querySelector("#red").checked &&document.querySelector("#underline").checked ){
+      msg.classList.add("r");
+	  msg.classList.add("u");
+   }
+   else if(document.querySelector("#red").checked ){
+   msg.classList.add("r");
+   msg.classList.remove("u");
+   }
+   else if(document.querySelector("#underline").checked){
+    msg.classList.add("u");
+	msg.classList.remove("r");
+   }
+   else{
+	msg.classList.remove("r");
+	msg.classList.remove("u");
+   }
+  });
+  
+  });
+  
+</script>
+<style>
+.r{
+ color:red;
+ }
+ .u{
+  text-decoration:underline;
+ }
+</style>
+</head>
+<body>
+ <h1>Css Self Test</h1>
+ <p id="msg">Example Text</p>
+ <input type="checkbox" id="red" >Red
+ <input type="checkbox" id="underline" >UnderLine
+ <br>
+ <button id="select" >Apply</button>
+</body>
+</html>

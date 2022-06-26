@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const detail = [];
+        detail.push({ pincode: 410216, Area: "khopoli" });
+        detail.push({ pincode: 411002, Area: "Pune" });
+        detail.push({ pincode: 416510, Area: "Sawantwadi, Sindhudurg" });
+        detail.push({ pincode: 400047, Area: "Andheri" });
+
+        let info = document.querySelector("#info");
+        info.addEventListener("click", () => {
+          let pin = document.querySelector("#t1").value;
+          let areaDetails = pickDetails(pin);
+          if (areaDetails.status) {
+            document.querySelector("#t2").value = areaDetails.detailsArea.Area;
+            document.querySelector("#msg").innerHTML =
+              "Detail Found <br>" +
+              areaDetails.detailsArea.pincode +
+              "<br>" +
+              areaDetails.detailsArea.Area;
+            msg.classList.add("g");
+          } else {
+            document.querySelector("#t2").value = "";
+            document.querySelector("#msg").innerHTML = "Detail not Found";
+            msg.classList.add("r");
+          }
+        });
+        function pickDetails(pin) {
+          let temp = { status: false, detailsArea: {} };
+          for (let i = 0; i < detail.length; i++) {
+            if (pin == detail[i].pincode) {
+              temp.status = true;
+              temp.detailsArea = detail[i];
+              return temp;
+            }
+          }
+          return temp;
+        }
+      });
+    </script>
+    <style>
+      .g {
+        color: green;
+      }
+      .r {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="t1" placeholder="Pincode" />
+    <br />
+    <input type="text" id="t2" placeholder="Area" />
+    <br /><br />
+    <button id="info">Info</button>
+    <hr />
+    <span id="msg">Details</span>
+  </body>
+</html>
