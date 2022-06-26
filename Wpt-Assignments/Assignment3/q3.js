@@ -1,9 +1,4 @@
-/* 3.	Create a table called  resource with resource id integer, primary key, resourcename varchar(15), status boolean
-a.	Demonstrate 
-i.	Insert
-ii.	Update  -- category and price
-iii.	Multi select – query on status
-iv.	Single select  -- query on resourceid. */
+
 
 
 const dbparam={
